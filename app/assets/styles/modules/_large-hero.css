@@ -6,6 +6,7 @@
         display: block;
     }
     &__text-content{
+        padding-top: 88px;
         position: absolute;
         width: 100%;
         max-width: 100%;
@@ -14,6 +15,10 @@
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;
+
+        @mixin atMedium{
+            padding-top: 60px;
+        }
     }
     &__title{
         font-weight: 300;
