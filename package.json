@@ -18,7 +18,8 @@
   "homepage": "https://github.com/learnwebcode2022/travel-agency#readme",
   "dependencies": {
     "jquery": "^3.6.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
