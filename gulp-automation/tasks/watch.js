@@ -5,7 +5,7 @@ browserSync = require('browser-sync').create();
 gulp.task('watch', function(){
 
     browserSync.init({
-        //notify: false,
+        notify: true,
         server: {
             baseDir: "app"
         }
@@ -13,18 +13,20 @@ gulp.task('watch', function(){
 
     gulp.watch("./app/*.html").on('change', browserSync.reload);
 
-    gulp.watch('./app/assets/scripts/**/*.js', gulp.series('scriptsRefresh'));
-
     gulp.watch('./app/assets/styles/**/*.css', gulp.series('cssInject'));
 
-    return
+    gulp.watch('./app/assets/scripts/**/*.js', gulp.series('scripts', javascriptRefresh));
+    
 });
-
-gulp.task('scriptsRefresh', gulp.series('scripts', function() {
-    return browserSync.reload();
-}));
 
 gulp.task('cssInject', gulp.series('styles', function() {
     return gulp.src('./app/temp/styles/styles.css')
     .pipe(browserSync.stream());
 }));
+
+function javascriptRefresh(cb) {
+    //reload browser
+    browserSync.reload();
+    console.log("Scripts Refreshed!");
+    cb();
+  }
