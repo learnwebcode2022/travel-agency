@@ -18,8 +18,10 @@ import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import $ from 'jquery';
 import StickyHeader from './modules/StickyHeader';
+import Modal from './modules/Modal';
 
 var mobileMenu = new MobileMenu();
 var revealFeatures = new RevealOnScroll($(".feature-item"), "85%");
 var revealTestimonials = new RevealOnScroll($(".testimonial"), "90%");
 var stickyHeader = new StickyHeader();
+var modal = new Modal();
