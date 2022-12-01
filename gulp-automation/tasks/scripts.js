@@ -15,3 +15,5 @@ gulp.task('scripts', function(cb) {
         });
     });
 });
+
+gulp.task('scripts-final', gulp.series('modernizr', 'scripts'));
